@@ -1,0 +1,49 @@
+﻿@model List<PruebaWebApp.Models.Customer>
+@{
+    ViewBag.Title = "CUSTOMERS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("ExportToExcel", "ReportCustomers", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row" id="divExportar" style="display:none">
+
+                <div class="col-sm-3">
+                    <div class="editor-label">
+                        @Html.Label("Exportar:")
+                    </div>
+                </div>
+
+                <div class="col-sm-1">
+                    <input type="submit" value="Exporta a Excel" class="button" />
+
+                </div>
+
+            </div>
+
+            <iframe id="txtArea1" style="display:none"></iframe>
+
+            <div>
+                <table id="tblGeneral" class="display" style="width:100%">
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/Views/customers.js"></script>
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿@model PruebaWebApp.Models.PersonaFisica
+@{
+    ViewBag.Title = "Editar Persona Fisica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Editar", "PersonaFisica", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d => d.IdPersonaFisica)
+            <div>
+                @Html.LabelFor(d => d.Nombre)
+                @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.ApellidoPaterno)
+                @Html.TextBoxFor(d => d.ApellidoPaterno, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.ApellidoMaterno)
+                @Html.TextBoxFor(d => d.ApellidoMaterno, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.RFC)<br />
+                @Html.TextBoxFor(d => d.RFC, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.FechaNacimiento)<br />
+                @Html.EditorFor(d => d.FechaNacimiento, "", new { @class = "form-control" })
+            </div>
+            <br />
+            <div style="text-align:right;">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+                <a href="~/PersonaFisica/Index" class="btn btn-danger">Cancelar</a>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+

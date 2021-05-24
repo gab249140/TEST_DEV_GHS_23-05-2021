@@ -1,0 +1,43 @@
+﻿@model List<PruebaWebApp.Models.PersonaFisica>
+@{
+    ViewBag.Title = "Persona Fisica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row" style="text-align:right;padding:5px;">
+    <a href="~/PersonaFisica/Nuevo" class="btn btn-primary">Nuevo</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Paterno</th>
+                <th>RFC</th>
+                <th>Fecha de Nacimiento</th>
+                <th></th>
+            </tr>
+            @foreach (var ListPerson in Model)
+            {
+        <tr>
+            <td>@ListPerson.IdPersonaFisica</td>
+            <td>@ListPerson.Nombre</td>
+            <td>@ListPerson.ApellidoPaterno</td>
+            <td>@ListPerson.ApellidoMaterno</td>
+            <td>@ListPerson.RFC</td>
+            <td>@ListPerson.FechaNacimiento</td>
+            <td>
+                <a class="btn btn-default" href="~/PersonaFisica/Editar/@ListPerson.IdPersonaFisica">Editar</a>
+                <a class="btn btn-danger" href="~/PersonaFisica/Eliminar/@ListPerson.IdPersonaFisica">Eliminar</a>
+            </td>
+        </tr>
+
+            }
+        </table>
+    </div>
+
+</div>
+

@@ -1,0 +1,6 @@
+namespace WebApiPersonasFisica.Areas.HelpPage.ModelDescriptions
+{
+    public class SimpleTypeModelDescription : ModelDescription
+    {
+    }
+}
